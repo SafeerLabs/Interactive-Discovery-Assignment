@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Study - The Curious Case</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital@0;1&family=Special+Elite&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="study">
+
+  <header>
+    <h1>The Curious Case</h1>
+    <nav>
+      <a href="index.html" id="nav-index">Front Door</a>
+      <a href="study.html" id="nav-study">Study</a>
+      <a href="workshop.html" id="nav-workshop">Workshop</a>
+      <a href="garden.html" id="nav-garden">Garden</a>
+      <a href="attic.html" id="nav-attic">Attic</a>
+      <a href="accuse.html" id="nav-accuse">Solve the Case</a>
+    </nav>
+  </header>
+
+  <main class="layout">
+    <section class="scene">
+      <h2>The Study</h2>
+      <p class="intro-text">
+        Elias's study smells of old paper and machine oil. A small fire is still
+        burning in the fireplace. Whoever left this room left in a hurry.
+      </p>
+
+      <button id="notebook-toggle" class="secondary">Show / hide notebook</button>
+
+      <div class="scene-picture" id="study-picture">
+        <img src="images/study.jpg" alt="A wood-panelled study full of old books, with a fireplace, a painting and a desk">
+
+        <!-- hidden message, only visible when the fire is out -->
+        <p class="secret-writing">III ... the hour I left</p>
+
+        <!-- clickble spots (positions are in % so they work on any screen size) -->
+        <button class="hotspot" id="spot-bookshelf" style="left:1%; top:32%; width:30%; height:62%;"><span>Bookshelf</span></button>
+        <button class="hotspot" id="spot-painting" style="left:35%; top:41%; width:15%; height:13%;"><span>Painting</span></button>
+        <button class="hotspot" id="spot-drawer" style="left:50%; top:76%; width:17%; height:11%;"><span>Desk drawer</span></button>
+        <button class="hotspot" id="spot-fireplace" style="left:35%; top:60%; width:15%; height:26%;"><span>Fireplace</span></button>
+      </div>
+
+      <div class="puzzle">
+        <h3>Where to next?</h3>
+        <p>A door leads down to the <strong>workshop</strong>, and the back door opens onto the <strong>garden</strong>.</p>
+        <a href="workshop.html" class="button">Go to the workshop</a>
+        <a href="garden.html" class="button">Go to the garden</a>
+      </div>
+    </section>
+
+    <aside class="notebook" id="notebook">
+      <h2>Detective's Notebook</h2>
+      <p>Detective: <strong id="detective-name"></strong></p>
+      <p>Clues found: <strong id="clue-count">0</strong> / 6</p>
+      <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+      <h3>Clues</h3>
+      <ul id="clue-list"></ul>
+      <h3>Items</h3>
+      <ul id="item-list"></ul>
+      <h3>Places visited</h3>
+      <ul id="visited-list"></ul>
+      <button id="reset-button" class="secondary">Start over</button>
+    </aside>
+  </main>
+
+  <!-- pop-up message box -->
+  <div class="popup-background" id="popup">
+    <div class="popup">
+      <h3 id="popup-title"></h3>
+      <p id="popup-text"></p>
+      <button id="popup-close">Close</button>
+    </div>
+  </div>
+  <div class="clue-toast" id="clue-toast"></div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

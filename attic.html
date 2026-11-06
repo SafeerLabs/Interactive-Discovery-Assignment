@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Attic - The Curious Case</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital@0;1&family=Special+Elite&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="attic">
+
+  <header>
+    <h1>The Curious Case</h1>
+    <nav>
+      <a href="index.html" id="nav-index">Front Door</a>
+      <a href="study.html" id="nav-study">Study</a>
+      <a href="workshop.html" id="nav-workshop">Workshop</a>
+      <a href="garden.html" id="nav-garden">Garden</a>
+      <a href="attic.html" id="nav-attic">Attic</a>
+      <a href="accuse.html" id="nav-accuse">Solve the Case</a>
+    </nav>
+  </header>
+
+  <main class="layout">
+    <section class="scene">
+      <h2>The Attic</h2>
+
+      <button id="notebook-toggle" class="secondary">Show / hide notebook</button>
+
+      <!-- shown when you DON'T have the key -->
+      <div class="locked-door hidden" id="attic-locked">
+        <p class="big-lock">&#128274;</p> <!-- locked emoji -->
+        <h3>The attic door is locked</h3>
+        <p>A small brass keyhole. The key must be hidden somewhere in the house...</p>
+        <a href="workshop.html" class="button">Go back downstairs</a>
+      </div>
+
+      <!-- shown when you DO have the key -->
+      <div id="attic-open">
+        <p class="intro-text">
+          The brass key turns with a loud creak. Dust floats in the light from the little window.
+          It's clear someone has been up here very recently.
+        </p>
+
+        <div class="scene-picture">
+          <img src="images/attic.jpg" alt="A small wooden attic room with a window, a writing desk, a bed and a chair">
+
+          <button class="hotspot" id="spot-chair" style="left:14%; top:65%; width:23%; height:33%;"><span>Chair</span></button>
+          <button class="hotspot" id="spot-desk" style="left:39%; top:48%; width:21%; height:20%;"><span>Writing desk</span></button>
+          <button class="hotspot" id="spot-window" style="left:37%; top:21%; width:19%; height:26%;"><span>Window</span></button>
+        </div>
+
+        <div class="puzzle">
+          <h3>Where to next?</h3>
+          <p>Do you have enough to name the person behind all this?</p>
+          <a href="accuse.html" class="button">Solve the case</a>
+          <a href="workshop.html" class="button secondary">Back downstairs</a>
+        </div>
+      </div>
+    </section>
+
+    <aside class="notebook" id="notebook">
+      <h2>Detective's Notebook</h2>
+      <p>Detective: <strong id="detective-name"></strong></p>
+      <p>Clues found: <strong id="clue-count">0</strong> / 6</p>
+      <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+      <h3>Clues</h3>
+      <ul id="clue-list"></ul>
+      <h3>Items</h3>
+      <ul id="item-list"></ul>
+      <h3>Places visited</h3>
+      <ul id="visited-list"></ul>
+      <button id="reset-button" class="secondary">Start over</button>
+    </aside>
+  </main>
+
+  <div class="popup-background" id="popup">
+    <div class="popup">
+      <h3 id="popup-title"></h3>
+      <p id="popup-text"></p>
+      <button id="popup-close">Close</button>
+    </div>
+  </div>
+  <div class="clue-toast" id="clue-toast"></div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

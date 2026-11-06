@@ -1,0 +1,468 @@
+/* The Curious Case - my stylesheet */
+
+body {
+  margin: 0;
+  background-color: #3b2a1e;
+  color: white;
+  font-family: 'Lora', Georgia, serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Special Elite', 'Courier New', monospace;
+  color: #ffcc66;
+}
+
+a {
+  color: #ffcc66;
+}
+
+/* ===== HEADER ===== */
+header {
+  background-color: #1e140d;
+  text-align: center;
+  padding: 10px;
+  border-bottom: 5px solid #ffcc66;
+}
+
+header h1 {
+  font-size: 40px;
+  margin: 10px;
+  text-shadow: 3px 3px 0px #8b0000;
+}
+
+nav a {
+  display: inline-block;
+  color: white;
+  background-color: #8b0000;
+  padding: 8px 12px;
+  margin: 3px;
+  border: 2px solid #ffcc66;
+}
+
+nav a:hover {
+  background-color: #ffcc66;
+  color: black;
+}
+
+nav a.current {
+  background-color: #ffcc66;
+  color: black;
+  font-weight: bold;
+}
+
+nav a.locked {
+  background-color: gray;
+  color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* ===== PAGE LAYOUT ===== */
+.layout {
+  display: flex;
+  gap: 20px;
+  width: 95%;
+  max-width: 1150px;
+  margin: 0 auto;
+  padding-top: 10px;
+}
+
+.scene {
+  flex: 3;
+}
+
+.notebook {
+  flex: 1;
+}
+
+.intro-text {
+  font-style: italic;
+}
+
+/* ===== PICTURES WITH CLICKABLE SPOTS ===== */
+.scene-picture {
+  position: relative;
+  border: 5px solid #ffcc66;
+}
+
+.scene-picture img {
+  display: block;
+  width: 100%;
+}
+
+/* study goes dark when you put out the fire */
+.scene-picture.dark img {
+  filter: brightness(25%);
+}
+
+.hotspot {
+  position: absolute;
+  background-color: transparent;
+  border: 3px dashed yellow;
+  color: yellow;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.hotspot:hover {
+  background-color: rgba(255, 255, 0, 0.3);
+}
+
+/* already looked at */
+.hotspot.checked {
+  border: 3px solid lime;
+  color: rgb(0, 255, 0);
+}
+
+.hotspot.checked::after {
+  content: " (done)";
+}
+
+.secret-writing {
+  position: absolute;
+  left: 60%;
+  top: 46%;
+  color: lime;
+  font-size: 24px;
+  font-weight: bold;
+  display: none;
+}
+
+.scene-picture.dark .secret-writing {
+  display: block;
+}
+
+/* ===== BOXES UNDER THE PICTURE ===== */
+.puzzle {
+  background-color: #5a3e2b;
+  border: 3px solid #ffcc66;
+  padding: 10px 20px;
+  margin-top: 20px;
+}
+
+button, .button {
+  background-color: #ffcc66;
+  color: black;
+  border: 2px solid black;
+  padding: 8px 14px;
+  margin: 3px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+
+button:hover, .button:hover {
+  background-color: orange;
+}
+
+button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
+.secondary {
+  background-color: #dddddd;
+}
+
+/* ===== CLOCK PUZZLE ===== */
+.clock-area {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+}
+
+.clock-info {
+  flex: 1;
+}
+
+.clock-face {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background-color: white;
+  border: 8px solid black;
+  position: relative;
+}
+
+.clock-number {
+  position: absolute;
+  color: black;
+  font-weight: bold;
+}
+
+.clock-hand {
+  position: absolute;
+  width: 6px;
+  height: 50px;
+  background-color: red;
+  left: 77px;
+  bottom: 80px;
+  transform-origin: bottom center;
+}
+
+.clock-centre {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background-color: black;
+  border-radius: 50%;
+  left: 73px;
+  top: 73px;
+}
+
+/* ===== SHED LOCK ===== */
+.lock-dials select {
+  font-size: 24px;
+  padding: 5px;
+}
+
+/* ===== MARTHA ===== */
+.dialogue-box {
+  background-color: white;
+  color: black;
+  padding: 10px;
+  border: 2px solid black;
+  margin-bottom: 10px;
+}
+
+.dialogue-box strong {
+  color: darkred;
+}
+
+/* ===== NOTEBOOK ===== */
+.notebook {
+  background-color: #fff8dc;
+  color: black;
+  border: 3px solid black;
+  padding: 10px 15px;
+  align-self: flex-start;
+}
+
+.notebook h2 {
+  color: darkred;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.notebook h3 {
+  color: black;
+  margin-bottom: 5px;
+}
+
+.notebook li {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.progress-bar {
+  background-color: white;
+  border: 2px solid black;
+  height: 15px;
+}
+
+.progress-fill {
+  background-color: green;
+  height: 100%;
+  width: 0%;
+}
+
+.empty-note {
+  color: gray;
+}
+
+#notebook-toggle {
+  display: none;
+}
+
+/* ===== POPUP ===== */
+.popup-background {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 10;
+}
+
+.popup-background.show {
+  display: block;
+}
+
+.popup {
+  background-color: #fff8dc;
+  color: black;
+  width: 80%;
+  max-width: 450px;
+  margin: 100px auto;
+  padding: 15px 20px;
+  border: 5px solid darkred;
+}
+
+.popup h3 {
+  color: darkred;
+}
+
+/* message that shows when you find a clue */
+.clue-toast {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: darkred;
+  color: white;
+  padding: 15px;
+  border: 3px solid yellow;
+  font-weight: bold;
+  z-index: 20;
+}
+
+.clue-toast.show {
+  display: block;
+}
+
+/* ===== START PAGE ===== */
+.start-page {
+  width: 90%;
+  max-width: 900px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.start-page img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #ffcc66;
+}
+
+.letter {
+  background-color: #fff8dc;
+  color: black;
+  padding: 15px 25px;
+  margin-top: 20px;
+  border: 3px solid black;
+  text-align: left;
+}
+
+.letter h2 {
+  color: darkred;
+  text-align: center;
+}
+
+.letter input {
+  font-size: 16px;
+  padding: 6px;
+  width: 250px;
+  max-width: 100%;
+}
+
+.error-text {
+  color: red;
+  font-weight: bold;
+}
+
+/* ===== LOCKED ATTIC ===== */
+.locked-door {
+  text-align: center;
+  background-color: #5a3e2b;
+  border: 3px dashed red;
+  padding: 30px;
+}
+
+.big-lock {
+  font-size: 60px;
+}
+
+/* ===== ACCUSE PAGE ===== */
+.suspects {
+  display: flex;
+  gap: 10px;
+}
+
+.suspect-card {
+  flex: 1;
+  background-color: #5a3e2b;
+  border: 3px solid #ffcc66;
+  padding: 10px;
+  text-align: center;
+}
+
+.face {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto;
+  color: white;
+  font-size: 30px;
+  line-height: 80px;
+  border: 2px solid white;
+}
+
+.ending {
+  display: none;
+}
+
+.ending img {
+  width: 100%;
+  border: 3px solid #ffcc66;
+}
+
+.hidden {
+  display: none;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  color: #cccccc;
+}
+
+.credits {
+  text-align: left;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ===== PHONES AND TABLETS ===== */
+@media (max-width: 900px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .notebook {
+    display: none;
+  }
+
+  .notebook.open {
+    display: block;
+  }
+
+  #notebook-toggle {
+    display: inline-block;
+  }
+
+  .suspects {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 28px;
+  }
+
+  .hotspot span {
+    display: none;
+  }
+
+  .secret-writing {
+    font-size: 12px;
+  }
+}

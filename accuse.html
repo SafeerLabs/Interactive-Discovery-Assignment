@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solve the Case - The Curious Case</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital@0;1&family=Special+Elite&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="accuse">
+
+  <header>
+    <h1>The Curious Case</h1>
+    <nav>
+      <a href="index.html" id="nav-index">Front Door</a>
+      <a href="study.html" id="nav-study">Study</a>
+      <a href="workshop.html" id="nav-workshop">Workshop</a>
+      <a href="garden.html" id="nav-garden">Garden</a>
+      <a href="attic.html" id="nav-attic">Attic</a>
+      <a href="accuse.html" id="nav-accuse">Solve the Case</a>
+    </nav>
+  </header>
+
+  <main class="layout">
+    <section class="scene">
+      <h2>Who is behind it?</h2>
+      <p class="intro-text">
+        The police inspector taps his foot. "Well, detective? Who made Elias Thorne disappear?"
+      </p>
+      <p id="accuse-warning"></p>
+      <p id="last-choice" class="intro-text"></p>
+
+      <button id="notebook-toggle" class="secondary">Show / hide notebook</button>
+
+      <div class="suspects">
+        <div class="suspect-card">
+          <div class="face" style="background-color:#2f5d50;">MW</div>
+          <h3>Martha Wells</h3>
+          <p>The gardener. She was awake at midnight and the shed is hers.</p>
+          <button class="accuse-button" data-suspect="Martha Wells">Accuse Martha</button>
+        </div>
+        <div class="suspect-card">
+          <div class="face" style="background-color:#8b2e2e;">VC</div>
+          <h3>Victor Crane</h3>
+          <p>The apprentice. Quiet, ambitious, and always asking questions.</p>
+          <button class="accuse-button" data-suspect="Victor Crane">Accuse Victor</button>
+        </div>
+        <div class="suspect-card">
+          <div class="face" style="background-color:#5a4a8a;">MH</div>
+          <h3>Mayor Hale</h3>
+          <p>Wanted to buy Elias's clock tower. Elias said no.</p>
+          <button class="accuse-button" data-suspect="Mayor Hale">Accuse the Mayor</button>
+        </div>
+      </div>
+
+      <!-- ENDING 1: correct, with enough evidence -->
+      <div class="ending puzzle" id="ending-best">
+        <h3>Case closed!</h3>
+        <img src="images/lighthouse.jpg" alt="The old lighthouse shining at night">
+        <p>
+          "It was Victor Crane," you say, laying out the boots, the gear and Martha's story.
+          Victor goes pale. He had been trying to steal Elias's blueprints to sell them.
+        </p>
+        <p>
+          Thanks to the letter in the attic, you know where to look. At the old lighthouse
+          you find Elias, safe, with a cup of tea and his blueprints. "I knew someone curious
+          enough would find me," he smiles. "Thank you, <span class="player-name"></span>."
+        </p>
+        <p><strong>BEST ENDING - you found Elias and caught the culprit.</strong></p>
+        <a href="index.html" class="button">Back to the start</a>
+      </div>
+
+      <!-- ENDING 2: right person, not enough proof -->
+      <div class="ending puzzle" id="ending-half">
+        <h3>Right person... not enough proof</h3>
+        <p>
+          Victor laughs. "You can't prove anything." And sadly, you can't, not yet.
+          The inspector lets him go, and nobody knows where Elias is.
+        </p>
+        <p>
+          You're on the right track, <span class="player-name"></span>.
+          Maybe there is still something hidden in the house? (Hint: have you been to the attic?)
+        </p>
+        <a href="study.html" class="button">Keep investigating</a>
+      </div>
+
+      <!-- ENDING 3: wrong person -->
+      <div class="ending puzzle" id="ending-wrong">
+        <h3>Wrong suspect!</h3>
+        <p>
+          You point at <strong id="wrong-name"></strong>. The inspector frowns. "That doesn't
+          fit the evidence at all." Meanwhile, the real culprit quietly slips away on the
+          midnight train...
+        </p>
+        <p>Don't give up, <span class="player-name"></span>. Look at your notebook again: whose initials keep appearing?</p>
+        <a href="study.html" class="button">Look again</a>
+      </div>
+    </section>
+
+    <aside class="notebook" id="notebook">
+      <h2>Detective's Notebook</h2>
+      <p>Detective: <strong id="detective-name"></strong></p>
+      <p>Clues found: <strong id="clue-count">0</strong> / 6</p>
+      <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+      <h3>Clues</h3>
+      <ul id="clue-list"></ul>
+      <h3>Items</h3>
+      <ul id="item-list"></ul>
+      <h3>Places visited</h3>
+      <ul id="visited-list"></ul>
+      <button id="reset-button" class="secondary">Start over</button>
+    </aside>
+  </main>
+
+  <div class="popup-background" id="popup">
+    <div class="popup">
+      <h3 id="popup-title"></h3>
+      <p id="popup-text"></p>
+      <button id="popup-close">Close</button>
+    </div>
+  </div>
+  <div class="clue-toast" id="clue-toast"></div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

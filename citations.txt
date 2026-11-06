@@ -1,0 +1,46 @@
+References
+
+Astigmatic. (2011). Special Elite [Font]. Google Fonts.
+    https://fonts.google.com/specimen/Special+Elite
+
+Bacarra, B. O., Jr. (2019). Tayid lighthouse at night [Photograph]. Wikimedia Commons.
+    https://commons.wikimedia.org/wiki/File:Tayid_Lighthouse_at_Night.jpg
+
+Beckwith, M. D. (2018). Abbotsford House study room [Photograph]. Wikimedia Commons.
+    https://commons.wikimedia.org/wiki/File:Abbotsford_House_Study_Room_(248456373).jpeg
+
+Campbell, B. (2015). Antique clock dial [Photograph]. Wikimedia Commons.
+    https://commons.wikimedia.org/wiki/File:Antique_clock_dial_(Unsplash).jpg
+
+chinabuffet. (2013, June 10). How to rotate + flip element with CSS [Online forum post].
+    Stack Overflow. https://stackoverflow.com/questions/17015568/how-to-rotate-flip-element-with-css
+
+Cyreal. (2011). Lora [Font]. Google Fonts.
+    https://fonts.google.com/specimen/Lora
+
+GeeksforGeeks. (n.d.). How to make a toast notification in HTML, CSS and JavaScript. Retrieved November 6, 2026, from
+    https://www.geeksforgeeks.org/javascript/how-to-make-a-toast-notification-in-html-css-and-javascript/
+
+Husmann, B. (2010). Attic bedroom [Photograph]. Wikimedia Commons.
+    https://commons.wikimedia.org/wiki/File:Attic_bedroom.jpg
+
+Impossible-Ad9423. (2025, September 17). Most elegant way to store data for a browser game [Online forum post].
+    Reddit. https://www.reddit.com/r/learnjavascript/comments/1njm0tf/most_elegant_way_to_store_data_for_a_browser_game/
+
+Segisser, P. (1906). Uhrmacherwerkstatt [Clockmaker's workshop] [Painting]. Augustinermuseum,
+    Freiburg, Germany. https://commons.wikimedia.org/wiki/File:Uhrmacherwerkstatt_-_Paul_Segisser_-_Augustiner_M_Freiburg.png
+
+Slidesgo. (n.d.). True crime studies for college [Presentation template]. Retrieved November 4, 2026, from
+    https://slidesgo.com/theme/true-crime-studies-for-college
+
+Sutcliffe, R. (2020). Potting shed, Geilston Garden [Photograph]. Wikimedia Commons.
+    https://commons.wikimedia.org/wiki/File:Potting_shed,_Geilston_Garden_-_geograph.org.uk_-_6568633.jpg
+
+W3Schools. (n.d.-a). CSS rotate property. Retrieved November 4, 2026, from
+    https://www.w3schools.com/cssref/css_pr_rotate.php
+
+W3Schools. (n.d.-b). Web Storage API. Retrieved November 4, 2026, from
+    https://www.w3schools.com/html/html5_webstorage.asp
+
+W3Schools. (n.d.-c). Window localStorage property. Retrieved November 4, 2026, from
+    https://www.w3schools.com/jsref/prop_win_localstorage.asp

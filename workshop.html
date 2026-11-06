@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Workshop - The Curious Case</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital@0;1&family=Special+Elite&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="workshop">
+
+  <header>
+    <h1>The Curious Case</h1>
+    <nav>
+      <a href="index.html" id="nav-index">Front Door</a>
+      <a href="study.html" id="nav-study">Study</a>
+      <a href="workshop.html" id="nav-workshop">Workshop</a>
+      <a href="garden.html" id="nav-garden">Garden</a>
+      <a href="attic.html" id="nav-attic">Attic</a>
+      <a href="accuse.html" id="nav-accuse">Solve the Case</a>
+    </nav>
+  </header>
+
+  <main class="layout">
+    <section class="scene">
+      <h2>The Workshop</h2>
+      <p class="intro-text">
+        Gears, springs and half-built clocks everywhere. An old painting of Elias at his
+        bench hangs by the door, and the room still looks exactly the same.
+        It's very quiet, because every clock in here has stopped.
+      </p>
+
+      <button id="notebook-toggle" class="secondary">Show / hide notebook</button>
+
+      <div class="scene-picture">
+        <img src="images/workshop.jpg" alt="Painting of a clockmaker working at a wooden bench with clocks on the table and on the wall">
+
+        <button class="hotspot" id="spot-tools" style="left:78%; top:17%; width:16%; height:25%;"><span>Hooks &amp; shelf</span></button>
+        <button class="hotspot" id="spot-clock" style="left:0%; top:27%; width:17%; height:24%;"><span>Clock</span></button>
+        <button class="hotspot" id="spot-gear" style="left:20%; top:38%; width:11%; height:16%;"><span>Bench parts</span></button>
+      </div>
+
+      <!-- Clock puzzle -->
+      <div class="puzzle">
+        <h3>Set the stopped clock</h3>
+        <div class="clock-area">
+          <div class="clock-face">
+            <span class="clock-number" style="left:70px; top:4px;">12</span>
+            <span class="clock-number" style="right:8px; top:62px;">3</span>
+            <span class="clock-number" style="left:76px; bottom:4px;">6</span>
+            <span class="clock-number" style="left:8px; top:62px;">9</span>
+            <div class="clock-hand" id="hour-hand"></div>
+            <div class="clock-centre"></div>
+          </div>
+
+          <div class="clock-info">
+            <p>The hand is pointing at <strong id="hour-text">12 o'clock</strong>.</p>
+            <div id="clock-controls">
+              <button id="hour-minus">&#8634; Back</button>
+              <button id="hour-plus">Forward &#8635;</button>
+              <br>
+              <button id="hour-try">Let the clock run</button>
+            </div>
+            <p id="clock-message"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="puzzle">
+        <h3>Where to next?</h3>
+        <a href="study.html" class="button">Back to the study</a>
+        <a href="attic.html" class="button">Climb to the attic</a>
+      </div>
+    </section>
+
+    <aside class="notebook" id="notebook">
+      <h2>Detective's Notebook</h2>
+      <p>Detective: <strong id="detective-name"></strong></p>
+      <p>Clues found: <strong id="clue-count">0</strong> / 6</p>
+      <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+      <h3>Clues</h3>
+      <ul id="clue-list"></ul>
+      <h3>Items</h3>
+      <ul id="item-list"></ul>
+      <h3>Places visited</h3>
+      <ul id="visited-list"></ul>
+      <button id="reset-button" class="secondary">Start over</button>
+    </aside>
+  </main>
+
+  <div class="popup-background" id="popup">
+    <div class="popup">
+      <h3 id="popup-title"></h3>
+      <p id="popup-text"></p>
+      <button id="popup-close">Close</button>
+    </div>
+  </div>
+  <div class="clue-toast" id="clue-toast"></div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

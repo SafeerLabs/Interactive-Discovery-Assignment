@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Curious Case of the Missing Clockmaker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital@0;1&family=Special+Elite&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="index">
+
+  <header>
+    <h1>The Curious Case</h1>
+    <nav>
+      <a href="index.html" id="nav-index">Front Door</a>
+      <a href="study.html" id="nav-study">Study</a>
+      <a href="workshop.html" id="nav-workshop">Workshop</a>
+      <a href="garden.html" id="nav-garden">Garden</a>
+      <a href="attic.html" id="nav-attic">Attic</a>
+      <a href="accuse.html" id="nav-accuse">Solve the Case</a>
+    </nav>
+  </header>
+
+  <main class="start-page">
+    <img src="images/cover.jpg" alt="Close-up of an old clock face with Roman numerals">
+
+    <div class="letter">
+      <h2>A Letter Arrives...</h2>
+      <p>
+        Dear Detective,
+      </p>
+      <p>
+        Elias Thorne, the best clockmaker in Willowbrook, has disappeared.
+        His shop was found unlocked this morning, every clock in the house stopped
+        at exactly the same time. The police say he simply went on holiday.
+        I don't believe them.
+      </p>
+      <p>
+        Please come to his house. Look carefully, everything is a clue.
+      </p>
+      <p><em>- A worried friend</em></p>
+
+      <!-- shown to nw players -->
+      <div id="new-player">
+        <label for="name-input">Sign your name to accept the case:</label><br>
+        <input type="text" id="name-input" placeholder="Detective ..." maxlength="20">
+        <br>
+        <button id="start-button">Take the case</button>
+        <p class="error-text" id="name-error"></p>
+      </div>
+
+      <!-- shown if the playerr already started (js switches this) -->
+      <div id="returning-player" class="hidden">
+        <p>
+          Welcome back, <strong id="returning-name"></strong>.
+          You have found <strong id="returning-clues">0</strong> clue(s) so far.
+        </p>
+        <a href="study.html" class="button">Continue investigating</a>
+        <button id="reset-button" class="secondary">Start a new case</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>Click on things to look closer. Your progress is saved automatically.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Garden - The Curious Case</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital@0;1&family=Special+Elite&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="garden">
+
+  <header>
+    <h1>The Curious Case</h1>
+    <nav>
+      <a href="index.html" id="nav-index">Front Door</a>
+      <a href="study.html" id="nav-study">Study</a>
+      <a href="workshop.html" id="nav-workshop">Workshop</a>
+      <a href="garden.html" id="nav-garden">Garden</a>
+      <a href="attic.html" id="nav-attic">Attic</a>
+      <a href="accuse.html" id="nav-accuse">Solve the Case</a>
+    </nav>
+  </header>
+
+  <main class="layout">
+    <section class="scene">
+      <h2>The Garden</h2>
+      <p class="intro-text">
+        A grey afternoon. You can hear Martha the gardener snipping away somewhere
+        behind the bushes. A small stone shed with a green door stands at the end of the gravel path.
+      </p>
+
+      <button id="notebook-toggle" class="secondary">Show / hide notebook</button>
+
+      <div class="scene-picture">
+        <img src="images/garden.jpg" alt="A stone potting shed with a green door, a gravel path and bushes">
+
+        <button class="hotspot" id="spot-martha" style="left:3%; top:45%; width:30%; height:45%;"><span>Bushes</span></button>
+        <button class="hotspot" id="spot-footprints" style="left:40%; top:79%; width:40%; height:18%;"><span>Footprints</span></button>
+        <button class="hotspot" id="spot-shed" style="left:42%; top:30%; width:17%; height:45%;"><span>Shed door</span></button>
+      </div>
+
+      <!-- Talking to Martha -->
+      <div class="puzzle">
+        <h3>Talk to Martha</h3>
+        <div class="dialogue-box" id="dialogue-text">
+          <strong>Martha:</strong> Evening. You must be the detective everyone's whispering about.
+        </div>
+        <button id="ask-elias">Ask about Elias</button>
+        <button id="ask-victor" class="hidden">Ask about Victor</button>
+        <button id="ask-shed">Ask about the shed</button>
+      </div>
+
+      <!-- Combination lock -->
+      <div class="puzzle">
+        <h3>The shed lock</h3>
+        <div class="lock-dials" id="lock-dials">
+          <select id="dial-1" aria-label="first number">
+            <option>0</option><option>1</option><option>2</option><option>3</option><option>4</option>
+            <option>5</option><option>6</option><option>7</option><option>8</option><option>9</option>
+          </select>
+          <select id="dial-2" aria-label="second number">
+            <option>0</option><option>1</option><option>2</option><option>3</option><option>4</option>
+            <option>5</option><option>6</option><option>7</option><option>8</option><option>9</option>
+          </select>
+          <select id="dial-3" aria-label="third number">
+            <option>0</option><option>1</option><option>2</option><option>3</option><option>4</option>
+            <option>5</option><option>6</option><option>7</option><option>8</option><option>9</option>
+          </select>
+          <button id="lock-try">Try code</button>
+        </div>
+        <p id="lock-message"></p>
+      </div>
+
+      <div class="puzzle">
+        <h3>Where to next?</h3>
+        <a href="study.html" class="button">Back inside to the study</a>
+      </div>
+    </section>
+
+    <aside class="notebook" id="notebook">
+      <h2>Detective's Notebook</h2>
+      <p>Detective: <strong id="detective-name"></strong></p>
+      <p>Clues found: <strong id="clue-count">0</strong> / 6</p>
+      <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+      <h3>Clues</h3>
+      <ul id="clue-list"></ul>
+      <h3>Items</h3>
+      <ul id="item-list"></ul>
+      <h3>Places visited</h3>
+      <ul id="visited-list"></ul>
+      <button id="reset-button" class="secondary">Start over</button>
+    </aside>
+  </main>
+
+  <div class="popup-background" id="popup">
+    <div class="popup">
+      <h3 id="popup-title"></h3>
+      <p id="popup-text"></p>
+      <button id="popup-close">Close</button>
+    </div>
+  </div>
+  <div class="clue-toast" id="clue-toast"></div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
